@@ -25,7 +25,7 @@ nsoils= length(soils)
 #Convert soil type to sand/soil ratio
 
 ss_rat = matrix(0, dim(intrins1)[1],1)
-ss_lookup = matrix( c(sort(soils), c(0.33,0.42,0.25)), nsoils, 2) 
+ss_lookup = matrix( c(sort(soils), c(0,.167,0.33,0.42,0.25,.083)), nsoils, 2) 
 ss_rat[] = as.matrix(ss_lookup[,2][match(unlist(intrins1$tray),ss_lookup[,1])])
 colnames(ss_rat) = c("sand")
 intrins1 = cbind(intrins1, ss_rat)
